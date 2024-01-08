@@ -27,8 +27,27 @@ export default function Main() {
     setDrag(false);
   }
 
+  function openFolder() {
+    // Create an input element dynamically
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'application/pdf'; // Restrict to PDF files
+
+    // Handle file selection
+    input.addEventListener('change', (e) => {
+      const selectedFile = e.target.files[0];
+      if (selectedFile && selectedFile.type === 'application/pdf') {
+        setFiles([selectedFile]);
+      }
+    });
+
+    // Trigger the file input
+    input.click();
+  }
+  
   return (
     <div>
+      <button onClick={openFolder}>Нажмите здесь, чтобы выбрать файл PDF</button>
       {drag ? (
         <div
           className='drop-area'
