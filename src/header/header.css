@@ -1,0 +1,9 @@
+header {
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  color: white;
+  padding: 10px 0;
+}
+
+h1 {
+margin: 0;
+}
